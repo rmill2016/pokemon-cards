@@ -36,7 +36,7 @@ const Card = ({ pokemonID }: Props) => {
             {pokemon && pokemon.name}
           </h2>
           <h2 className="text-3xl md:text-4xl text-black text-center capitalize font-medium">
-            ID# {pokemon && pokemonID}
+            ID # {pokemon && pokemonID}
           </h2>
         </div>
         <img
