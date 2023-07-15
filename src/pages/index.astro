@@ -1,0 +1,31 @@
+---
+import Card from '../components/Card'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<div class="flex flex-col gap-20 justify-center items-center my-auto">
+			<h1 class="text-black text-4xl md:text-5xl py-10">
+				Pokemon Collection
+			</h1>
+			<ul
+				class="flex flex-col gap-10 md:flex-row md:flex-wrap w-full h-auto md:justify-center items-center"
+			>
+				{
+					[...Array(152).keys()]
+						.slice(1, 151)
+						.map((pokemon) => (
+							<Card client:load pokemonID={pokemon} />
+						))
+				}
+			</ul>
+		</div>
+	</body>
+</html>
